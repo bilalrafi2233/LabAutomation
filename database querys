@@ -1,0 +1,42 @@
+-- create database
+CREATE DATABASE db_lab_automation;
+
+-- user table query
+CREATE TABLE users(
+	user_id INT(12) PRIMARY KEY AUTO_INCREMENT,
+    user_name VARCHAR(40) NOT NULL,
+    user_password VARCHAR(40) NOT NULL,
+    user_department INT(11) NOT NULL,
+    user_role INT(11) NOT NULL
+);
+
+-- department table query
+CREATE TABLE departments(
+	department_id INT(12) PRIMARY KEY AUTO_INCREMENT,
+    department_name VARCHAR(40) NOT NULL
+);
+
+
+-- roles table query
+CREATE TABLE roles(
+	roles_id INT(12) PRIMARY KEY AUTO_INCREMENT,
+    roles_name VARCHAR(40) NOT NULL
+);
+
+-- insert to users one record
+
+INSERT INTO users(user_name,user_password,user_department,user_role) 
+VALUES("M.bilal","bilal123",1,1);
+
+
+-- insert to departmests one record
+
+INSERT INTO departments(department_name)
+VALUES("Admin");
+
+-- insert to roles one record
+
+INSERT INTO roles(roles_name)
+VALUES("Admin");
+
+
