@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,6 +20,11 @@
     <div class="box">
         <div class="form">
             <h2>Log In</h2>
+            <?php
+                // if(isset($_SESSION['user'])){
+                //     echo $_SESSION['user'] ;
+                // };
+            ?>
             <div class="inputBox">
                 <input type="text" required="required" name="user">
                 <span>User Name</span>
@@ -28,6 +36,7 @@
                 <i></i>
             </div>
             <div class="links">
+                
                 <a href="#">Forget password</a>
                 <a href="#">signup</a>
             </div>

@@ -37,7 +37,7 @@
                with font-awesome or any other icon font library -->
           
           <li class="nav-item">
-            <a href="read.php" class="nav-link">
+            <a href="userread.php" class="nav-link">
             <i class="fa-solid fa-envelope"></i>  
              <!--lag nhi rha | <i></i>  -->
               <p class=" font-weight-bold" style="color:#45f3ff;">
@@ -70,7 +70,7 @@
           </li>
 
           <li class="nav-item">
-            <a href="department.php" class="nav-link">
+            <a href="departmentread.php" class="nav-link">
               <i class="fa-duotone fa-users-gear" style="--fa-primary-color: #0045bd; --fa-secondary-color: #0045bd;"></i>
               <p class=" font-weight-bold" style="color:#45f3ff;">
               Departments
@@ -80,7 +80,7 @@
           </li>
 
           <li class="nav-item">
-            <a href="role.php" class="nav-link">
+            <a href="roleread.php" class="nav-link">
               <i class="fa-duotone fa-users-gear" style="--fa-primary-color: #0045bd; --fa-secondary-color: #0045bd;"></i>
               <p class=" font-weight-bold" style="color:#45f3ff;">
                 Roles

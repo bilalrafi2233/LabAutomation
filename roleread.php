@@ -1,8 +1,8 @@
-  <!DOCTYPE html>
+<!DOCTYPE html>
   <html lang="en">
   <head>
     <?php
-    include_once('./break/header.php')
+    include_once('break/header.php')
     ?>
     </head>
   <body class="hold-transition sidebar-mini layout-fixed">
@@ -15,13 +15,13 @@
 
     <!-- Navbar -->
     <?php
-      include_once('./break/navbar.php')
+      include_once('break/navbar.php')
     ?>
     <!-- /.navbar -->
 
     <!-- Main Sidebar Container -->
     <?php
-      include_once('./break/sidebar.php')
+      include_once('break/sidebar.php')
     ?>
 
   <!-- Content Wrapper. Contains page content -->
@@ -37,8 +37,8 @@
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Projects</li>
-              <li class=" mx-2"><a href="adduser.php"><button type="button" class="btn btn-primary" >Add Records</button></a></li>
+              <li class="breadcrumb-item active">Roles</li>
+              <li class=" mx-2"><a href="roleadd.php"><button type="button" class="btn btn-primary" >Add Records</button></a></li>
             </ol>
           </div>
         </div>
@@ -51,7 +51,7 @@
       <!-- Default box -->
       <div class="card">
         <div class="card-header">
-          <h3 class="card-title">Projects</h3>
+          <h3 class="card-title">Roles</h3>
 
           <div class="card-tools">
             <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
@@ -71,7 +71,7 @@
           $password = "";
           $db_name = "db_lab_automation";
           $con = mysqli_connect($localhost,$username,$password,$db_name) or die("connection field");
-          $sql = "SELECT * FROM users JOIN departments ON users.user_department = departments.department_id JOIN roles ON users.user_role = roles.roles_id;";
+          $sql = "SELECT * FROM roles";
           $result = mysqli_query($con,$sql) or die("query unsuuccesful");
           if(mysqli_num_rows($result) > 0){
     ?>
@@ -82,18 +82,7 @@
                           ID
                       </th>
                       <th style="width: 20%">
-                          Name
-                      </th>
-                      <th style="width: 30%">
-                          Password
-                      </th>
-                      <th>
-                          User Department
-                      </th>
-                      <th style="width: 8%" class="text-center">
-                          User Role
-                      </th>
-                      <th style="width: 20%">
+                          Roles
                       </th>
                   </tr>
               </thead>
@@ -104,10 +93,7 @@
         
               ?>
                 <tr>
-                  <td><?php echo $row['user_id'] ?></td>
-                  <td><?php echo $row['user_name']   ?></td>
-                  <td><?php echo $row['user_password']   ?></td>
-                  <td><?php echo $row['department_name']   ?></td>
+                  <td><?php echo $row['roles_id'] ?></td>
                   <td><?php echo $row['roles_name']   ?></td>
                   <td class="project-actions text-right">    
                           <a class="btn btn-info btn-sm" href="#">
@@ -132,8 +118,7 @@
 }
 ?>
 
-
-        </div>
+      </div>
         <!-- /.card-body -->
       </div>
       <!-- /.card -->
@@ -147,7 +132,7 @@
 
   <!-- footer -->
 <?php
-  include_once('./break/footer.php')
+  include_once('break/footer.php')
 ?>
 <!-- footer -->
 
@@ -159,7 +144,7 @@
 </div>
 <!-- ./wrapper -->
 <?php
-  include_once('./break/footerscript.php')
+  include_once('break/footerscript.php')
 ?>
 </body>
 </html>

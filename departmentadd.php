@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <?php
-  include_once('./break/header.php')
+  include_once('break/header.php')
   ?>
   </head>
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -15,13 +15,13 @@
 
   <!-- Navbar -->
   <?php
-    include_once('./break/navbar.php')
+    include_once('break/navbar.php')
   ?>
   <!-- /.navbar -->
 
   <!-- Main Sidebar Container -->
   <?php
-    include_once('./break/sidebar.php')
+    include_once('break/sidebar.php')
   ?>
 
   <!-- Content Wrapper. Contains page content -->
@@ -91,7 +91,7 @@
 
   <!-- footer -->
 <?php
-  include_once('./break/footer.php')
+  include_once('break/footer.php')
 ?>
 <!-- footer -->
 
@@ -103,7 +103,7 @@
 </div>
 <!-- ./wrapper -->
 <?php
-  include_once('./break/footerscript.php')
+  include_once('break/footerscript.php')
 ?>
 </body>
 </html>

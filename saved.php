@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 include_once("config.php");
 $user = $_POST['user'];
 $password = $_POST['password'];
@@ -12,6 +14,7 @@ if(isset($row)){
 header('Location: index.php');  
 }else{
     header('Location:login.php');
+    $_SESSION['user'] = "Invalid User Name or password";
 };
 
 ?>

@@ -9,7 +9,7 @@ $sql = "INSERT INTO users(user_name,user_password,user_department,user_role) Val
 
 $result = mysqli_query($con,$sql) or die("query unsuuccesful");
 
-header("Location: http://localhost/project/index.php");
+header("Location:userread.php");
 
 mysqli_close($con);
 

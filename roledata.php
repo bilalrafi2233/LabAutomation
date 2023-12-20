@@ -6,7 +6,7 @@ $sql = "INSERT INTO roles(roles_name) Values('{$role}')";
 
 $result = mysqli_query($con,$sql);
 
-header("Location: http://localhost/project/index.php");
+header("Location:roleread.php");
 
 // mysqli_close($con);
 
