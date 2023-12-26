@@ -1,12 +1,14 @@
-  <!DOCTYPE html>
+
+<!DOCTYPE html>
   <html lang="en">
   <head>
     <?php
-    include_once('./break/header.php')      
-    
-    ?>
+    include_once('./break/header.php');      
+      ?>
     </head>
   <body class="hold-transition sidebar-mini layout-fixed">
+  
+
   <div class="wrapper">
 
     <!-- Preloader -->

@@ -1,13 +1,4 @@
-<?php
-session_start();
-if($_SESSION['user']['user_role']==1){
-  header('location:index.php');
-}
-
-?>  
-  
-  
-  <!DOCTYPE html>
+<!DOCTYPE html>
   <html lang="en">
   <head>
     <?php
@@ -75,12 +66,14 @@ if($_SESSION['user']['user_role']==1){
 
 
         <?php
-          $localhost ="localhost";
-          $username = "root";
-          $password = "";
-          $db_name = "db_lab_automation";
-          $con = mysqli_connect($localhost,$username,$password,$db_name) or die("connection field");
-          $sql = "SELECT * FROM users JOIN departments ON users.user_department = departments.department_id JOIN roles ON users.user_role = roles.roles_id;";
+     include_once('config.php');
+     if($_SESSION['user']['user_role']==1){
+
+         $sql = "SELECT * FROM products JOIN category ON products.cetagory = category.category_id JOIN products_status ON products.product_status = products_status.status_id;";
+     }else if($_SESSION['user']['user_role']==2){
+
+         $sql = "SELECT * FROM products JOIN category ON products.cetagory = category.category_id JOIN products_status ON products.product_status = products_status.status_id;";
+     }
           $result = mysqli_query($con,$sql) or die("query unsuuccesful");
           if(mysqli_num_rows($result) > 0){
     ?>
@@ -88,20 +81,21 @@ if($_SESSION['user']['user_role']==1){
               <thead>
                   <tr>
                       <th style="width: 1%">
-                          ID
+                          Product_ID
                       </th>
+
                       <th style="width: 20%">
-                          Name
+                            Product_Name
                       </th>
+
                       <th style="width: 30%">
-                          Password
+                          Category
                       </th>
+
                       <th>
-                          User Department
+                          Product_Status
                       </th>
-                      <th style="width: 8%" class="text-center">
-                          User Role
-                      </th>
+
                       <th style="width: 20%">
                       </th>
                   </tr>
@@ -113,18 +107,23 @@ if($_SESSION['user']['user_role']==1){
         
               ?>
                 <tr>
-                  <td><?php echo $row['user_id'] ?></td>
-                  <td><?php echo $row['user_name']   ?></td>
-                  <td><?php echo $row['user_password']   ?></td>
-                  <td><?php echo $row['department_name']   ?></td>
-                  <td><?php echo $row['roles_name']   ?></td>
+                  <td><?php echo $row['product_id'] ?></td>
+                  <td><?php echo $row['product_name']   ?></td>
+                  <td><?php echo $row['category_name']   ?></td>
+                  <td><?php echo $row['status_name']   ?></td>
+                  <td>
+                    <select name="" id="">
+                        <option value="2">Send Testing</option>
+                        <option value="1">Send CPRI</option>
+                    </select>
+                  </td>
                   <td class="project-actions text-right">    
                           <a class="btn btn-info btn-sm" href="#">
                               <i class="fas fa-pencil-alt">
                               </i>
                               Edit
                           </a>
-                          <a class="btn btn-danger btn-sm" href="userdelete">
+                          <a class="btn btn-danger btn-sm" href="productDelete.php?id="<?php echo $row['product_id']?>>
                               <i class="fas fa-trash">
                               </i>
                               Delete
@@ -138,7 +137,7 @@ if($_SESSION['user']['user_role']==1){
           </table>
 
           <?php
-}
+};
 ?>
 
       </div>

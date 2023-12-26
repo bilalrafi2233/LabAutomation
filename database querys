@@ -40,3 +40,49 @@ INSERT INTO roles(roles_name)
 VALUES("Admin");
 
 
+/////Create product table
+
+CREATE TABLE products(
+product_id INT(11) AUTO_INCREMENT PRIMARY KEY,
+product_name varchar(100) NOT NULL,
+cetagory INT(11) NOT NULL,    
+product_status INT(11) NOT NULL 
+);
+
+
+
+///category table
+
+CREATE TABLE category(
+category_id INT(11) AUTO_INCREMENT PRIMARY KEY,
+category_name varchar(100) NOT NULL
+);
+
+
+///product status
+
+CREATE TABLE products_status(
+status_id INT(11) AUTO_INCREMENT PRIMARY KEY,
+status_name varchar(100) NOT NULL
+);
+
+
+
+INSERT INTO products(product_name,cetagory,product_status) 
+VALUES
+("bulb",1,1),
+("TV",2,2);
+
+
+
+
+INSERT INTO products_status(status_name) 
+VALUES
+("Pending"),
+("send for testing");
+
+
+INSERT INTO category(category_name) 
+VALUES
+("light"),
+("Lcd");

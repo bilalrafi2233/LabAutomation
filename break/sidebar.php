@@ -14,7 +14,7 @@
           <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Alexander Pierce</a>
+          <a href="#" class="d-block"><?php echo $_SESSION['user']['user_name'] ?> </a>
         </div>
       </div>
 
@@ -35,25 +35,31 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
+          <?php 
+            if($_SESSION['user']['user_role']==1){
+              ?>
+              <li class="nav-item">
+                <a href="userread.php" class="nav-link">
+                <i class="fa fa-users"></i>  
+                <!--lag nhi rha | <i></i>  -->
+                  <p class=" font-weight-bold" style="color:#45f3ff;">
+                    User Managent
+                    <!--  -->
+                  </p>
+                </a>
+              </li>
+              <?php
+            }
+          ?>
           
-          <li class="nav-item">
-            <a href="userread.php" class="nav-link">
-            <i class="fa-solid fa-envelope"></i>  
-             <!--lag nhi rha | <i></i>  -->
-              <p class=" font-weight-bold" style="color:#45f3ff;">
-                User Managent
-                <span class="right badge badge-danger">New</span>
-              </p>
-            </a>
-          </li>
               
           
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="productsread.php" class="nav-link">
               <i class="fa-duotone fa-users-gear" style="--fa-primary-color: #0045bd; --fa-secondary-color: #0045bd;"></i>
               <p class=" font-weight-bold" style="color:#45f3ff;">
                 Product Managent
-                <span class="right badge badge-danger">New</span>
+                <!--  -->
               </p>
             </a>
           </li>
@@ -64,7 +70,7 @@
               <i class="fa-duotone fa-users-gear" style="--fa-primary-color: #0045bd; --fa-secondary-color: #0045bd;"></i>
               <p class=" font-weight-bold" style="color:#45f3ff;">
                 category
-                <span class="right badge badge-danger">New</span>
+                
               </p>
             </a>
           </li>
@@ -74,7 +80,7 @@
               <i class="fa-duotone fa-users-gear" style="--fa-primary-color: #0045bd; --fa-secondary-color: #0045bd;"></i>
               <p class=" font-weight-bold" style="color:#45f3ff;">
               Departments
-                <span class="right badge badge-danger">New</span>
+                
               </p>
             </a>
           </li>
@@ -84,12 +90,12 @@
               <i class="fa-duotone fa-users-gear" style="--fa-primary-color: #0045bd; --fa-secondary-color: #0045bd;"></i>
               <p class=" font-weight-bold" style="color:#45f3ff;">
                 Roles
-                <span class="right badge badge-danger">New</span>
+                
               </p>
             </a>
           </li>
 
-
+          <li class=" mx-2"><a href="logout.php"><button type="button" class="btn btn-primary"  style="background-color:#45f3ff; color:black;" >Log Out</button></a></li>
 
         </ul>
 

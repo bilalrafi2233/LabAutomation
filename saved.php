@@ -11,10 +11,11 @@ $result = mysqli_query($con,$query);
 
 $row = mysqli_fetch_assoc($result);
 if(isset($row)){    
-header('Location: index.php');  
+    $_SESSION['user'] = $row;
+    header('Location: index.php');  
 }else{
     header('Location:login.php');
-    $_SESSION['user'] = "Invalid User Name or password";
+    $_SESSION['error'] = "Invalid User Name or password";
 };
 
 ?>

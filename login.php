@@ -1,5 +1,8 @@
 <?php
     session_start();
+    if(isset($_SESSION['user'])){
+       header('Location:index.php');
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -9,7 +12,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="stylesheet" href="dist/css/f-style.css">
-    
+    <style>
+    .text-danger{
+        color:red;
+        text-align:center;
+    }
+    </style>
 </head>
 <body>   
 <header>
@@ -21,9 +29,13 @@
         <div class="form">
             <h2>Log In</h2>
             <?php
-                // if(isset($_SESSION['user'])){
-                //     echo $_SESSION['user'] ;
-                // };
+                if(isset($_SESSION['error'])){
+                 ?>   
+                    <p class="text-danger"><?php echo $_SESSION['error']; ?></p>
+                
+                 <?php
+                 unset($_SESSION['error']);
+                };
             ?>
             <div class="inputBox">
                 <input type="text" required="required" name="user">
